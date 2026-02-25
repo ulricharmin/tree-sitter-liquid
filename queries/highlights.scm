@@ -50,6 +50,7 @@
   "endraw"
   "endschema"
   "endstyle"
+  "endstylesheet"
   "endtablerow"
   "endunless"
   "for"
@@ -68,6 +69,7 @@
   "section"
   "sections"
   "style"
+  "stylesheet"
   "tablerow"
   "unless"
   "when"
@@ -103,5 +105,3 @@
   (raw_content) @text.reference (#set! priority 102))
 
 ((comment) @comment (#set! priority 102))
-
-

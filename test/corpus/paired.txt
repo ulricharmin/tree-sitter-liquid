@@ -661,6 +661,41 @@ Style with Liquid
   (template_content))
 
 ==================
+Stylesheet
+==================
+
+{% stylesheet %}
+  .el{ display: flex; }
+{% endstylesheet %}
+
+---
+(program
+  (stylesheet_statement
+   (stylesheet_content))
+ (template_content))
+
+==================
+Stylesheet with Liquid
+==================
+
+{% stylesheet %}
+  .el{
+    display: {{ something.style }};
+    font-size: 14;
+  }
+{% endstylesheet %}
+
+---
+(program
+  (stylesheet_statement
+    (stylesheet_content)
+    (access
+      (identifier)
+      (identifier))
+    (stylesheet_content))
+  (template_content))
+
+==================
 If with Nested Output in Include
 ==================
 
@@ -680,4 +715,3 @@ If with Nested Output in Include
       receiver: (identifier)
       property: (identifier)))))
  (template_content))
-
