@@ -371,12 +371,18 @@ module.exports = grammar({
         ),
       ),
 
-    schema_statement: ($) =>
-      seq(
-        tag('schema'),
-        alias($.template_content, $.json_content),
-        tag('endschema'),
-      ),
+	schema_statement: ($) =>
+	  seq(
+		tag('schema'),
+		repeat(
+		  choice(
+			$._statement,
+			alias($.template_content, $.json_content),
+			$.comment,
+		  ),
+		),
+		tag('endschema'),
+	  ),
 
     style_statement: ($) =>
       seq(
