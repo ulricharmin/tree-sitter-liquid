@@ -457,4 +457,5 @@ Large Combined Section
             (identifier))))))
   (template_content)
   (schema_statement
+    (json_content)
     (json_content)))
