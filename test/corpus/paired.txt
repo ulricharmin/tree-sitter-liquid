@@ -626,6 +626,52 @@ Schema
  (template_content))
 
 ==================
+Schema with Liquid Expression
+==================
+
+{% schema %}
+{
+  "settings": [
+    {
+      "type": "range",
+      "visible_if": "{{ section.settings.enable }}"
+    }
+  ]
+}
+{% endschema %}
+
+---
+(program
+  (schema_statement
+    (json_content)
+    (access
+      receiver: (access
+        receiver: (identifier)
+        property: (identifier))
+      property: (identifier))
+    (json_content))
+  (template_content))
+
+==================
+Schema with Liquid Statement
+==================
+
+{% schema %}
+{
+  "name": "Section"
+}
+{% if true %}{% endif %}
+{% endschema %}
+
+---
+(program
+  (schema_statement
+    (json_content)
+    (if_statement
+      condition: (boolean)))
+  (template_content))
+
+==================
 Style
 ==================
 
